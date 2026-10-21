@@ -55,3 +55,12 @@ Sem analytics, cookies próprios ou envio de formulários. Serviços de hospedag
 ## Recursos visuais
 
 Ilustrações vetoriais criadas especificamente para o protótipo. Podem ser editadas no projeto. Tipografia usa fontes do sistema; Georgia para títulos. Nenhuma fotografia de pessoa real foi utilizada.
+
+
+## Versão 2.0 — atualização
+- Inclui loja demonstrativa com carrinho e pedido de itens artesanais por WhatsApp. Preços são ilustrativos.
+- Para inserir as imagens oficiais, substitua `assets/media/logo-mariri.jpg`, `assets/media/cerimonia.jpg` e `assets/media/Wakatanka.jpeg` mantendo os nomes e extensões. Arquivos atuais são marcadores provisórios, não as fotos reais.
+- Hero usa fotografia genérica remota do Unsplash; substitua por foto autorizada do Instituto antes da publicação definitiva.
+- Confira o WhatsApp, o endereço, o mapa e o calendário com a equipe.
+- Não inclui comércio de ayahuasca, rapé ou substâncias regulamentadas.
+- Novas páginas em `pages/` e atualizações de `css/style.css` e `js/app.js`.
