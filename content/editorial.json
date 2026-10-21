@@ -1,0 +1,42 @@
+{
+  "version": "1.0.0",
+  "status": "protótipo em validação",
+  "articles": [
+    {
+      "slug": "ayahuasca",
+      "title": "AYAHUASCA — A MEDICINA DA FLORESTA",
+      "url": "pages/ayahuasca.html",
+      "category": "Cultura • Natureza",
+      "summary": "Conhecer a ayahuasca é aproximar-se de histórias, comunidades e responsabilidades que vão além da experiência individual.",
+      "approval": "revisão institucional pendente"
+    },
+    {
+      "slug": "feitio",
+      "title": "O FEITIO DA AYAHUASCA — TRADIÇÃO, UNIÃO E ESPIRITUALIDADE",
+      "url": "pages/feitio.html",
+      "category": "Cultura • Comunidade",
+      "summary": "Mais que uma etapa material, o feitio pode ser vivido como tempo de encontro, responsabilidade e transmissão de saberes.",
+      "approval": "revisão institucional pendente"
+    },
+    {
+      "slug": "silencio",
+      "title": "O PODER DO SILÊNCIO — MEDITAÇÃO E AUTOCONHECIMENTO",
+      "url": "pages/silencio.html",
+      "category": "Presença • Autoconhecimento",
+      "summary": "Diminuir o ruído pode abrir espaço para observar. O silêncio é um convite à presença, sem exigência de perfeição.",
+      "approval": "revisão institucional pendente"
+    }
+  ],
+  "events": [],
+  "voices": [],
+  "videos": [],
+  "news": [],
+  "campaigns": [],
+  "contacts": {
+    "address": null,
+    "whatsapp": null,
+    "instagram": null,
+    "facebook": null,
+    "hours": null
+  }
+}

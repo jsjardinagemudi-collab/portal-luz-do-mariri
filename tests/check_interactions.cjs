@@ -1,0 +1,19 @@
+const fs=require('fs'),vm=require('vm'),assert=require('assert');
+class E{constructor(text=''){this.textContent=text;this.dataset={};this.attrs={};this.listeners={};this.hidden=false;this.style={};this.value='';this.classes=new Set();this.classList={toggle:(n,v)=>{if(v===undefined)v=!this.classes.has(n);v?this.classes.add(n):this.classes.delete(n);return v},add:n=>this.classes.add(n),remove:n=>this.classes.delete(n),contains:n=>this.classes.has(n)};}addEventListener(n,f){this.listeners[n]=f}setAttribute(k,v){this.attrs[k]=v}removeAttribute(k){delete this.attrs[k]}replaceChildren(...els){this.children=els;this.textContent=els.map(e=>e.textContent).join(' ')}focus(){}select(){}remove(){}async fire(n){await this.listeners[n]?.({currentTarget:this,target:this})}}
+const one={},many={};for(const s of ['#status','#menu','.menu-toggle','#tour-image','#tour-description','#article-search','#search-count','#copy-request','#request-text','h1','.lead','.article-copy','[data-reading]'])one[s]=new E();one['#request-text'].value='Pedido educativo';one['h1'].textContent='Artigo educativo';one['.lead'].textContent='Resumo';one['.article-copy'].textContent='palavra '.repeat(401);
+many['[data-space]']=['cerimonia','salao','horta','meditacao','natureza'].map(x=>{const e=new E();e.dataset.space=x;return e});
+many['[data-search]']=['AYAHUASCA','FEITIO','SILÊNCIO'].map(x=>{const e=new E(x);e.dataset.search=x;return e});
+for(const x of ['[data-copy]','[data-share]','[data-instagram]','[data-facebook]'])many[x]=[new E()];many['#menu a']=[];many['main>section[id]']=[];
+let copied='';const document={documentElement:new E(),querySelector:s=>one[s]||null,querySelectorAll:s=>many[s]||[],addEventListener:()=>{},createElement:()=>new E(),body:{append:()=>{}},activeElement:null};const location={href:'https://example.org/mariri/pages/silencio.html#x',protocol:'https:'};const ctx={document,location,window:{isSecureContext:true,location},navigator:{clipboard:{writeText:async s=>{copied=s}}},setTimeout:()=>1,clearTimeout:()=>{},console};vm.runInNewContext(fs.readFileSync(require('path').join(__dirname,'../js/app.js'),'utf8'),ctx);
+(async()=>{let n=0;await one['.menu-toggle'].fire('click');assert.equal(one['.menu-toggle'].attrs['aria-expanded'],'true');n++;await one['.menu-toggle'].fire('click');assert.equal(one['.menu-toggle'].attrs['aria-expanded'],'false');n++;
+for(const el of many['[data-space]']){await el.fire('click');assert.equal(el.attrs['aria-pressed'],'true');assert.equal(many['[data-space]'].filter(e=>e.attrs['aria-pressed']==='true').length,1);assert(one['#tour-image'].src.endsWith('.svg'));assert(one['#tour-description'].textContent.length>30);n++;}
+one['#article-search'].value='silencio';await one['#article-search'].fire('input');assert.equal(many['[data-search]'].filter(e=>!e.hidden).length,1);n++;
+one['#article-search'].value='xyz';await one['#article-search'].fire('input');assert.equal(many['[data-search]'].filter(e=>!e.hidden).length,0);assert(one['#search-count'].textContent.startsWith('Nenhum'));n++;
+one['#article-search'].value='';await one['#article-search'].fire('input');assert.equal(many['[data-search]'].filter(e=>!e.hidden).length,3);n++;
+await one['#copy-request'].fire('click');assert.equal(copied,'Pedido educativo');n++;
+await many['[data-copy]'][0].fire('click');assert.equal(copied,'https://example.org/mariri/pages/silencio.html');n++;
+await many['[data-share]'][0].fire('click');assert(one['#status'].textContent.includes('copiado'));n++;
+await many['[data-instagram]'][0].fire('click');assert(copied.includes('#LuzDoMariri'));n++;
+assert(many['[data-facebook]'][0].href.startsWith('https://www.facebook.com/sharer/sharer.php?u='));n++;
+assert.equal(one['[data-reading]'].textContent,'3 min de leitura');n++;
+console.log(n+' interaction assertions: PASS (isolated DOM simulation; no browser layout test)');})().catch(e=>{console.error(e);process.exit(1)});
