@@ -64,3 +64,12 @@ Ilustrações vetoriais criadas especificamente para o protótipo. Podem ser edi
 - Confira o WhatsApp, o endereço, o mapa e o calendário com a equipe.
 - Não inclui comércio de ayahuasca, rapé ou substâncias regulamentadas.
 - Novas páginas em `pages/` e atualizações de `css/style.css` e `js/app.js`.
+
+
+## Atualização V3 — teste das cinco fotos das medicinas
+
+Coloque os arquivos **ayahuasca.jpg**, **rape.jpg**, **sananga.jpg**, **cannabis.jpg** e **jurema.jpg** na pasta `assets/media/` do GitHub. As fotos não estão incluídas neste ZIP porque foram enviadas diretamente ao GitHub, e não como arquivos nesta conversa. Caso estejam ausentes, o site exibirá uma ilustração substituta.
+
+Para o cartaz oficial da cerimônia, coloque `wakatanka.jpg` em `assets/media/`; enquanto estiver ausente, o site usa o `Wakatanka.jpeg` provisório já presente no projeto. Para a marca, use `logo.jpg` em `assets/media/`, com retorno à imagem anterior caso falte.
+
+**Atenção:** se você excluir todos os arquivos do repositório antes de enviar este ZIP, as cinco fotos já publicadas serão perdidas. Preserve-as ou envie-as novamente. A publicação em GitHub Pages pode levar alguns minutos; force atualização com Ctrl+F5.
