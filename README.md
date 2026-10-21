@@ -81,3 +81,7 @@ Para o cartaz oficial da cerimônia, coloque `wakatanka.jpg` em `assets/media/`;
 - Fotografias das cinco medicinas devem ser enviadas para `assets/media/` com nomes `ayahuasca.jpg`, `rape.jpg`, `sananga.jpg`, `cannabis.jpg`, `jurema.jpg`. O CSS limita suas dimensões e recorta com `object-fit: cover`.
 - A arte da Wakatanka presente neste pacote tem o caminho `assets/media/Wakatanka.jpeg`. A logo de referência presente no pacote usa `assets/media/logo-mariri.jpg`. Substitua os arquivos provisórios pelas artes oficiais, respeitando nomes e extensões.
 - Antes de publicar, confirme textos, imagens, agenda e dados com a equipe. Os preços da loja são ilustrativos.
+
+
+## V5 — Preto, dourado e laranja
+Carrossel com cinco espaços: adicionar `assets/media/espaco-01.jpg` até `espaco-05.jpg`. Ilustrações aparecem enquanto não há fotografias. Filosofia institucional preservada conforme texto fornecido. Botão de variedades de rapé está dentro da seção Rapé.

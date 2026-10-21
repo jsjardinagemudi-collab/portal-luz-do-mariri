@@ -50,3 +50,16 @@ document.querySelectorAll('img[data-fallback]').forEach((img) => {
     if (fallback && img.getAttribute('src') !== fallback) img.src = fallback;
   });
 });
+
+// V5: carrossel de fotografias dos espaços, com navegação acessível.
+(() => {
+ const track=document.querySelector('.spaces-track'); if(!track)return;
+ const slides=[...track.children], dots=[...document.querySelectorAll('[data-slide]')], counter=document.querySelector('#spaces-counter');
+ let active=0;
+ function show(n){active=(n+slides.length)%slides.length;track.style.transform=`translateX(-${active*100}%)`;counter.textContent=String(active+1).padStart(2,'0')+' / '+String(slides.length).padStart(2,'0');dots.forEach((d,i)=>{d.classList.toggle('is-active',i===active);if(i===active)d.setAttribute('aria-current','true');else d.removeAttribute('aria-current')})}
+ document.querySelector('#spaces-prev')?.addEventListener('click',()=>show(active-1));
+ document.querySelector('#spaces-next')?.addEventListener('click',()=>show(active+1));
+ dots.forEach((d,i)=>d.addEventListener('click',()=>show(i)));
+ document.querySelector('.spaces-viewport')?.addEventListener('keydown',e=>{if(e.key==='ArrowLeft'){e.preventDefault();show(active-1)}if(e.key==='ArrowRight'){e.preventDefault();show(active+1)}});
+ show(0);
+})();
