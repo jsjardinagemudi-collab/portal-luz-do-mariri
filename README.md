@@ -73,3 +73,11 @@ Coloque os arquivos **ayahuasca.jpg**, **rape.jpg**, **sananga.jpg**, **cannabis
 Para o cartaz oficial da cerimônia, coloque `wakatanka.jpg` em `assets/media/`; enquanto estiver ausente, o site usa o `Wakatanka.jpeg` provisório já presente no projeto. Para a marca, use `logo.jpg` em `assets/media/`, com retorno à imagem anterior caso falte.
 
 **Atenção:** se você excluir todos os arquivos do repositório antes de enviar este ZIP, as cinco fotos já publicadas serão perdidas. Preserve-as ou envie-as novamente. A publicação em GitHub Pages pode levar alguns minutos; force atualização com Ctrl+F5.
+
+
+## Versão 4 — atualização editorial e visual
+- Homepage redesenhada com mensagem de acolhimento, seis cartões de intenções, seis caminhos de navegação e FAQ, inspirada na organização de conteúdo do site Wix de referência, sem copiar seus materiais.
+- Mantidas as seções e funções da versão 3 (biblioteca, cerimônias, Caminhos e carrinho).
+- Fotografias das cinco medicinas devem ser enviadas para `assets/media/` com nomes `ayahuasca.jpg`, `rape.jpg`, `sananga.jpg`, `cannabis.jpg`, `jurema.jpg`. O CSS limita suas dimensões e recorta com `object-fit: cover`.
+- A arte da Wakatanka presente neste pacote tem o caminho `assets/media/Wakatanka.jpeg`. A logo de referência presente no pacote usa `assets/media/logo-mariri.jpg`. Substitua os arquivos provisórios pelas artes oficiais, respeitando nomes e extensões.
+- Antes de publicar, confirme textos, imagens, agenda e dados com a equipe. Os preços da loja são ilustrativos.
