@@ -85,3 +85,7 @@ Para o cartaz oficial da cerimônia, coloque `wakatanka.jpg` em `assets/media/`;
 
 ## V5 — Preto, dourado e laranja
 Carrossel com cinco espaços: adicionar `assets/media/espaco-01.jpg` até `espaco-05.jpg`. Ilustrações aparecem enquanto não há fotografias. Filosofia institucional preservada conforme texto fornecido. Botão de variedades de rapé está dentro da seção Rapé.
+
+
+## V6 e Wix
+Veja `TUTORIAL_WIX_V6.md`. Links editáveis em `js/wix-config.js`. Fotografias oficiais não incluídas: consulte `assets/media/LEIA-IMAGENS.txt`.
