@@ -31,3 +31,18 @@ body{background:#12100e;color:#f3ede2} .site-header{background:#17130f!important
 .practice-card img{width:100%;height:220px;object-fit:cover;display:block}
 .medicine-photo{width:100%;max-height:330px;object-fit:cover;display:block}
 @media(max-width:720px){.wix-connect-grid{grid-template-columns:1fr}.wix-connect-card{padding:20px}.practice-card img{height:190px}}
+
+/* V7 · Roda Digital do Mariri */
+.roda-section{background:radial-gradient(circle at 50% 45%,#302619 0%,#171411 55%,#0d0e0c 100%);color:#f5f1e8;text-align:center;overflow:hidden}
+.roda-heading{max-width:800px;margin:0 auto 2rem}.roda-heading h2{color:#e2c279}.roda-heading p{color:#f5f1e8}
+.roda-stage{position:relative;width:min(88vw,640px);height:min(88vw,640px);margin:2rem auto;display:grid;place-items:center}
+.roda-stage:before,.roda-stage:after{content:'';position:absolute;inset:12%;border:1px solid rgba(212,175,55,.32);border-radius:50%;pointer-events:none}.roda-stage:after{inset:26%;border-style:dashed;opacity:.55}
+.roda-orbit{position:absolute;inset:0;border-radius:50%;animation:mariri-orbit 45s linear infinite}
+.roda-node{--radius:clamp(110px,34vw,265px);position:absolute;left:50%;top:50%;width:96px;height:96px;margin:-48px;transform:rotate(calc(var(--i)*45deg)) translateY(calc(-1*var(--radius))) rotate(calc(var(--i)*-45deg));display:grid;place-items:center;text-decoration:none;color:#f5f1e8;outline-offset:5px}
+.roda-node-inner{width:94px;height:94px;border-radius:50%;border:1px solid #c5a35b;background:linear-gradient(140deg,#3d3021,#161813);box-shadow:0 6px 25px #0009;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;animation:mariri-counter 45s linear infinite;transition:background .2s,box-shadow .2s}
+.roda-node b{font-size:1.8rem;color:#e2c279}.roda-node small{font-size:.72rem;font-weight:600}.roda-node:hover .roda-node-inner,.roda-node:focus-visible .roda-node-inner{background:#5a4327;box-shadow:0 0 0 4px #d4af3766}
+.roda-stage:has(.roda-node:hover) .roda-orbit,.roda-stage:has(.roda-node:focus-visible) .roda-orbit,.roda-stage:has(.roda-node:hover) .roda-node-inner,.roda-stage:has(.roda-node:focus-visible) .roda-node-inner{animation-play-state:paused}
+.roda-center{width:29%;aspect-ratio:1;border-radius:50%;border:2px solid #d4af37;background:#171411;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:.25rem;z-index:1;box-shadow:0 0 40px #d4af3733;overflow:hidden}.roda-center img{width:86%;max-height:70%;object-fit:contain;border-radius:50%}.roda-center span{font-size:clamp(.52rem,1.5vw,.85rem);letter-spacing:.08em;color:#e2c279;font-weight:700}.roda-footnote{font-size:.85rem;color:#d6c9b6}
+@keyframes mariri-orbit{to{transform:rotate(360deg)}}@keyframes mariri-counter{to{transform:rotate(-360deg)}}
+@media(max-width:600px){.roda-stage{width:min(96vw,390px);height:min(96vw,390px)}.roda-node{--radius:clamp(112px,35vw,158px);width:64px;height:64px;margin:-32px}.roda-node-inner{width:64px;height:64px}.roda-node b{font-size:1.2rem}.roda-node small{font-size:.52rem}.roda-center{width:28%}.roda-heading h2{font-size:clamp(1.65rem,7vw,2.4rem)}}
+@media(prefers-reduced-motion:reduce){.roda-orbit,.roda-node-inner{animation:none!important}}
